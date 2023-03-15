@@ -7,6 +7,7 @@
 
 using GameFramework.Localization;
 using System;
+using UnityEngine;
 using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
@@ -16,10 +17,7 @@ namespace StarForce
     {
         public override bool UseNativeDialog
         {
-            get
-            {
-                return true;
-            }
+            get { return true; }
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
@@ -65,7 +63,7 @@ namespace StarForce
                 try
                 {
                     string languageString = GameEntry.Setting.GetString(Constant.Setting.Language);
-                    language = (Language)Enum.Parse(typeof(Language), languageString);
+                    language = (Language) Enum.Parse(typeof(Language), languageString);
                 }
                 catch
                 {
